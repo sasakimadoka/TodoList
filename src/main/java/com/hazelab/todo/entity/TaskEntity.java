@@ -9,9 +9,8 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "todos")
-@Validated
-public class ToDoEntity {
+@Table(name = "tasks")
+public class TaskEntity {
 
     @Id
     private Integer id;
