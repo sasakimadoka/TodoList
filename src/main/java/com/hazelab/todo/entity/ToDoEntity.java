@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "todo_app")
+@Table(name = "todos")
 @Validated
 public class ToDoEntity {
 
@@ -19,20 +19,20 @@ public class ToDoEntity {
     @NotNull
     private String name;
 
-    private LocalDateTime expired_at;
+    private LocalDateTime expiredAt;
 
     @NotNull
     private Integer status;
 
     @NotNull
-    private Integer is_deleted;
+    private Integer isDeleted;
 
     @NotNull
-    private LocalDateTime created_at;
+    private LocalDateTime createdAt;
 
     @NotNull
-    private LocalDateTime updated_at;
+    private LocalDateTime updatedAt;
 
-    private String color_label;
+    private String colorLabel;
 
 }
