@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    driverClassName: ${SPRING_DATASOURCE_DRIVERCLASSNAME}
+    url: ${SPRING_DATASOURCE_URL}
+    userName: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
