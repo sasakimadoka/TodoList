@@ -2,10 +2,10 @@ package com.hazelab.todo.controller;
 
 
 import com.hazelab.todo.entity.TaskEntity;
-import com.hazelab.todo.repository.TaskRepository;
 import com.hazelab.todo.service.TaskService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -22,8 +22,8 @@ public class TaskController {
         return taskService.findList();
     }
 
-    public Optional<TaskEntity> find(Integer id){
+    @GetMapping(path="/tasks/{id}")
+    public Optional<TaskEntity> find(@PathVariable Integer id){
         return taskService.find(id);
     }
-
 }
