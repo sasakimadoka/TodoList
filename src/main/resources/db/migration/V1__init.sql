@@ -1,7 +1,7 @@
 CREATE TABLE todos (
   id int(255) NOT NULL AUTO_INCREMENT,
   name varchar(255) NOT NULL,
-  expire_at datetime ,
+  expired_at datetime ,
   status int(255) NOT NULL,
   is_deleted int(255) NOT NULL,
   created_at datetime default current_timestamp NOT NULL,
