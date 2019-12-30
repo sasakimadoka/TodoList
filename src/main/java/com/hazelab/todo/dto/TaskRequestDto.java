@@ -1,17 +1,18 @@
-package com.hazelab.todo.entity;
+package com.hazelab.todo.dto;
 
-import org.springframework.validation.annotation.Validated;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "todos")
-@Validated
-public class ToDoEntity {
+@Getter
+@Setter
+@ToString(callSuper = true)
+public class TaskRequestDto {
+
 
     @Id
     private Integer id;
@@ -34,5 +35,8 @@ public class ToDoEntity {
     private LocalDateTime updatedAt;
 
     private String colorLabel;
+
+
+
 
 }

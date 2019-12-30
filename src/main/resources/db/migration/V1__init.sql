@@ -1,4 +1,4 @@
-CREATE TABLE todos (
+CREATE TABLE tasks (
   id int(255) NOT NULL AUTO_INCREMENT,
   name varchar(255) NOT NULL,
   expired_at datetime ,
