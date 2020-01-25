@@ -22,4 +22,12 @@ public class TaskService {
         return taskRepository.findById(id);
     }
 
+    public void delete(Integer id){
+        Optional<TaskEntity> optionalTaskEntity = taskRepository.findById(id);
+        if(optionalTaskEntity.isPresent()){
+            TaskEntity taskEntity = optionalTaskEntity.get();
+            taskEntity.setIsDeleted(true);
+            taskRepository.save(taskEntity);
+        }
+    }
 }
