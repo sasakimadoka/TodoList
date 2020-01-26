@@ -15,7 +15,7 @@ public class TaskService {
     private final TaskRepository taskRepository;
 
     public List<TaskEntity> findList(){
-        return taskRepository.findAll();
+        return taskRepository.findAllByIsDeleted(false);
     }
 
     public Optional<TaskEntity> find(Integer id){
