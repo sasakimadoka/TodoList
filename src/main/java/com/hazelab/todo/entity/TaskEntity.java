@@ -34,7 +34,7 @@ public class TaskEntity {
 
     @NotNull
     @Column(name = "is_deleted")
-    private Integer isDeleted;
+    private Boolean isDeleted;
 
     @NotNull
     @Column(name = "created_at")
