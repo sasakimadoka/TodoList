@@ -14,6 +14,10 @@ public class TaskService {
 
     private final TaskRepository taskRepository;
 
+    public void create(TaskEntity taskEntity){
+        taskRepository.save(taskEntity);
+    }
+
     public List<TaskEntity> findList(){
         return taskRepository.findAllByIsDeleted(false);
     }

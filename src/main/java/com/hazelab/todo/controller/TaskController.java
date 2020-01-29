@@ -16,6 +16,12 @@ public class TaskController {
 
     private final TaskService taskService;
 
+    @PostMapping(path="/tasks/create/{taskEntity}")
+    public ResponseEntity<String> create(@PathVariable TaskEntity taskEntity){
+        taskService.create(taskEntity);
+        return ResponseEntity.ok("success-create");
+    }
+
     @GetMapping("/tasks")
     public List<TaskEntity> findList(){
         return taskService.findList();
