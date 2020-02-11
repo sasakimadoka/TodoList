@@ -14,6 +14,7 @@ public class TaskService {
 
     private final TaskRepository taskRepository;
 
+
     public List<TaskEntity> findList(){
         return taskRepository.findAllByIsDeleted(false);
     }
