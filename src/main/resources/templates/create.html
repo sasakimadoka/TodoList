@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="contents" class="al-main">
+    <div class="al-content">
+        <head>
+            <meta charset="UTF-8">
+            <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.1.0/css/bootstrap.min.css}" />
+            <title>タスク新規作成</title>
+        </head>
+        <body>
+            <h1>タスク新規作成</h1>
+            <form method="post" action="/submit">
+                <div class="serializedFormContainer">
+                    <label>タスク名</label>
+                    <input type="text" name="name" id="task_name">
+                </div>
+                <div>
+                    <label>カラーラベル</label>
+                    <input type="text" name="color_label" id="color_label">
+                </div>
+
+                <div>
+                    <label>送信ボタン</label>
+                    <button type="submit"></button>
+                </div>
+            </form>
+            <label><a href="/index">ホームに戻る</a></label>
+            <script th:src="@{/webjars/bootstrap/4.1.0/js/bootstrap.min.js}"></script>
+        </body>
+    </div>
+</div>
+</html>

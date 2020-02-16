@@ -14,6 +14,7 @@ public class TaskService {
 
     private final TaskRepository taskRepository;
 
+
     public List<TaskEntity> findList(){
         return taskRepository.findAllByIsDeleted(false);
     }
@@ -29,5 +30,9 @@ public class TaskService {
             taskEntity.setIsDeleted(true);
             taskRepository.save(taskEntity);
         }
+    }
+
+    public void create(TaskEntity taskEntity){
+        taskRepository.save(taskEntity);
     }
 }

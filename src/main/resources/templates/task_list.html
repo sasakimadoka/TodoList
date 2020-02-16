@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.1.0/css/bootstrap.min.css}" />
+    <div class="content-top clearfix">
+        <h1 class="al-title">タスク一覧</h1>
+    </div>
+</head>
+<body>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> タスク名 </th>
+                    <th> ステータス </th>
+                    <th> カラーレベル </th>
+                    <th> 期限 </th>
+                </tr>
+            </thead>
+        <tbody>
+            <tr th:each="tasks : ${taskList}" th:scope="row">
+                <td><span th:text="${tasks.name}"> 名前 </span></td>
+                <td><span th:text="${tasks.status}"> ステータス </span></td>
+                <td><span th:text="${tasks.colorLabel}"> カラーレベル </span></td>
+                <td><span th:text="${tasks.expiredAt}"> 期限 </span></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <p><a href="/index/">戻る</a></p>
+    <script th:src="@{/webjars/bootstrap/4.1.0/js/bootstrap.min.js}"></script>
+</body>
+</html>

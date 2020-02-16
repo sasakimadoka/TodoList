@@ -26,7 +26,7 @@ public class TaskEntity {
     private String name;
 
     @Column(name = "expired_at")
-    private LocalDateTime expiredAt;
+    private LocalDateTime expiredAt = LocalDateTime.now();
 
     @NotNull
     @Column(name = "status")
@@ -38,11 +38,11 @@ public class TaskEntity {
 
     @NotNull
     @Column(name = "created_at")
-    private LocalDateTime createdAt;
+    private LocalDateTime createdA = LocalDateTime.now();
 
     @NotNull
     @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
+    private LocalDateTime updatedAt = LocalDateTime.now();
 
     @Column(name = "color_label")
     private String colorLabel;

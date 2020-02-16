@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <div class="content-top clearfix">
+        <h1 class="al-title">ToDoList Home</h1>
+        <ul class="breadcrumb al-breadcrumb">
+            <li><a href="/create/">タスク新規作成</a></li>
+            <li><a href="/task_list/">タスク一覧</a></li>
+        </ul>
+    </div>
+</head>
+<body>
+<div>
+    <label>
+        <th:block th:if="*{createCheck != null}">
+            <label th:text="*{createCheck} + 'は、新規タスクとして登録されました。' "></label>
+        </th:block>
+    </label>
+</div>
+</body>
+</html>
