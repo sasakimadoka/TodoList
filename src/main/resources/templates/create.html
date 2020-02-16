@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--<html xmlns:th="http://www.thymeleaf.org" th:replace="layout::base(~{::contents}, ~{})">-->
+<!--<div th:fragment="contents" class="al-main">-->
+<!--    <div class="al-content">-->
+        <head>
+            <meta charset="UTF-8">
+            <title>タスク新規作成</title>
+        </head>
+        <body>
+            <h1>タスク新規</h1>
+            <form method="post" action="/submit">
+                <div class="serializedFormContainer">
+                    <label>タスク名</label>
+                    <input type="text" name="name" id="task_name">
+                </div>
+                <div>
+                    <label>カラーラベル</label>
+                    <input type="text" name="color_label" id="color_label">
+                </div>
+
+                <div>
+                    <label>送信ボタン</label>
+                    <button type="submit"></button>
+                </div>
+            </form>
+        </body>
+    </div>
+</div>
+</html>

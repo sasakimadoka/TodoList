@@ -31,4 +31,8 @@ public class TaskService {
             taskRepository.save(taskEntity);
         }
     }
+
+    public void create(TaskEntity taskEntity){
+        taskRepository.save(taskEntity);
+    }
 }
