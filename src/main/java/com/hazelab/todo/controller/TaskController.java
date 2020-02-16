@@ -3,11 +3,15 @@ package com.hazelab.todo.controller;
 import com.hazelab.todo.entity.TaskEntity;
 import com.hazelab.todo.service.TaskService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.jws.WebParam;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -29,14 +33,20 @@ public class TaskController {
     }
     @PostMapping("/submit")
     @ModelAttribute
-    public void submit(TaskEntity taskEntity){
-        System.out.println("ここ来てる？");
+    public ModelAndView submit(ModelAndView model, TaskEntity taskEntity){
         taskEntity.setStatus(0);
         taskEntity.setIsDeleted(false);
         taskService.create(taskEntity);
+        model.addObject("createCheck",taskEntity.getName());
+        return index(model);
     }
-
-
-
+    @GetMapping("/task_list")
+    @ModelAttribute
+    public ModelAndView task_list(ModelAndView model){
+        List<TaskEntity> taskEntity = this.taskService.findList();
+        model.addObject("taskList",taskEntity);
+        model.setViewName("task_list");
+        return model;
+    }
 
 }

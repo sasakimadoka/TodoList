@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <div class="content-top clearfix">
-        <h1 class="al-title">ご飯</h1>
+        <h1 class="al-title">ToDoList Home</h1>
         <ul class="breadcrumb al-breadcrumb">
-            <li><a href="/create/">タスクリスト</a></li>
-            <li>ここにやりたいこと</li>
+            <li><a href="/create/">タスク新規作成</a></li>
+            <li><a href="/task_list/">タスク一覧</a></li>
         </ul>
     </div>
 </head>
 <body>
-
-<h1></h1>
-<h2>元彼はごーちゃん</h2>
-<h3>マッチングアプリで男捕まえる</h3>
-
+<div>
+    <label>
+        <th:block th:if="*{createCheck != null}">
+            <label th:text="*{createCheck} + 'は、新規タスクとして登録されました。' "></label>
+        </th:block>
+    </label>
+</div>
 </body>
 </html>

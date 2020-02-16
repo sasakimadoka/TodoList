@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-<!--<html xmlns:th="http://www.thymeleaf.org" th:replace="layout::base(~{::contents}, ~{})">-->
-<!--<div th:fragment="contents" class="al-main">-->
-<!--    <div class="al-content">-->
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="contents" class="al-main">
+    <div class="al-content">
         <head>
             <meta charset="UTF-8">
+            <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.1.0/css/bootstrap.min.css}" />
             <title>タスク新規作成</title>
         </head>
         <body>
-            <h1>タスク新規</h1>
+            <h1>タスク新規作成</h1>
             <form method="post" action="/submit">
                 <div class="serializedFormContainer">
                     <label>タスク名</label>
@@ -24,6 +24,8 @@
                     <button type="submit"></button>
                 </div>
             </form>
+            <label><a href="/index">ホームに戻る</a></label>
+            <script th:src="@{/webjars/bootstrap/4.1.0/js/bootstrap.min.js}"></script>
         </body>
     </div>
 </div>
